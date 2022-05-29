@@ -6,7 +6,8 @@ import './index.scss'
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
-    const refForm = useRef
+    const refForm = useRef()
+
     useEffect(() => {
         setTimeout(() => {
           setLetterClass('text-animate-hover')
@@ -18,9 +19,20 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                
+                'service_p1jfoce',
+                'template_gtp5c9i',
+                refForm.current,
+                'foEvkq4CRRz4yuN64'
             )
-        
+            .then(
+                () => {
+                    alert('Message sent successfully!')
+                    window.location.reload(false)
+                },
+                () => {
+                    alert('Failed to send the message. Please try again!')
+                }
+            )
     }
 
 
