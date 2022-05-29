@@ -1,11 +1,11 @@
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from 'react'
+import { Loader } from 'react-loaders'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCss3, faGitAlt, faHtml5, faJsSquare, faReact, faUnity } from '@fortawesome/free-brands-svg-icons'
 
 const About = () => {
-
     const [letterClass, setLetterClass] = useState('text-animate')
     
     useEffect(() => {
@@ -15,6 +15,7 @@ const About = () => {
       }, [])
 
     return(
+        <>
         <div className='container about-page'>
             <div className='text-zone'>
                 <h1>
@@ -32,11 +33,6 @@ const About = () => {
                 wonders by incorporating the always-evolving AI technology into music and
                 eventually craft a one-of-a-kind software that pleases those who want to make
                 music without going through much hassle.
-                </p>
-                <p>I am looking for either an M.Sc or a Ph.D. position to further enhance my abilities. 
-                I play the electric guitar and sing in Iran Philharmonic Choir as a bass singer. 
-                I'm also learning the French language by myself and, most importantly, my soft skills and vast understanding of the English
-                language have helped me grasp once-in-a-lifetime opportunities, resulting in experiences that I'll forever cherish.
                 </p>
             </div>
 
@@ -64,6 +60,8 @@ const About = () => {
             </div>
         </div>
 
+        <Loader type="pacman" />
+        </>
 
     )
 }
